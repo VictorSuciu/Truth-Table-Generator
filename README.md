@@ -53,7 +53,7 @@ Output Truth Table
 
 ```
 Cat   Dog   | Cat OR NOT Dog 
-===========================
+============================
 False False | True
 False True  | False
 True  False | True
@@ -69,8 +69,8 @@ Input Expression
 
 Output Truth Table
 ```
-w     x     y     z     | ( w OR x ) AND ( y OR z ) 
-==================================================
+w     x     y     z     | (w OR x) AND (y OR z) 
+===============================================
 False False False False | False
 False False False True  | False
 False False True  False | False
