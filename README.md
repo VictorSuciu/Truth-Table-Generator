@@ -64,7 +64,7 @@ True  True  | True
 
 Input Expression
 ```
-(w OR x) and (y OR z)
+(w OR x) AND (y OR z)
 ```
 
 Output Truth Table
