@@ -134,7 +134,7 @@ def create_truth_table():
                 headerLineLen += 1
         
     print("|", expression)
-    for i in range(headerLineLen + len(expression)):
+    for i in range(headerLineLen + len(expression) + 1):
         print('=', end='')
     print()
     for i in range(2**len(vars)):
@@ -162,7 +162,10 @@ while True:
     for i in range(len(expressionArray)):
         if expressionArray[i].upper() in operators:
             expressionArray[i] = expressionArray[i].upper()
-        expression += expressionArray[i] + " "
+        if expressionArray[i] == "(" or (i < len(expressionArray) - 1 and expressionArray[i+1] == ")"):
+            expression += expressionArray[i]
+        else:
+            expression += expressionArray[i] + " "
 
     vars = []
     postfixExpression = []
