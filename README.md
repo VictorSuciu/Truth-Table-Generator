@@ -2,44 +2,35 @@
 
 This console program generates truth tables from boolean expressions.
 
-<br>
+-----
 
 ## Usage Instructions
 
 1. Download the file `Truth_Table_Generator.py`.
-
 2. Navigate into its parent directory in the command line. 
-
 3. Enter the following command: `python3 Truth_Table_Generator.py`.
-
 4. Done! You can now enter boolean expressions and generate truth tables.
 
-<br>
+-----
 
 ## Expression Syntax 
 
 ### Operators, in order of precedence:
-
 * Not
-
 * And
-
 * Or
-
 > Not case sensitive
 
 ### Parentheses:
-
 * (
 * )
 
 ### Variables
-
 Any other string is considered a variable
 
 #### Variables and Operators must be separated by a blank space. This is optional for parentheses.
 
-<br>
+-----
 
 ## Sample Inputs and Outputs
 
@@ -88,11 +79,3 @@ True  True  False True  | True
 True  True  True  False | True
 True  True  True  True  | True
 ```
-
-
-
-
-
-
-
-
