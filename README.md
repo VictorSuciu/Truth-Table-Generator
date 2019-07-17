@@ -16,9 +16,9 @@ This console program generates truth tables from boolean expressions.
 ## Expression Syntax 
 
 ### Operators, in order of precedence:
-* Not
-* And
-* Or
+* **Negation:** NOT, ~, ¬
+* **Conjunction:** AND, /\, ^, ∧
+* **Disjunction:** OR, \/, ∨
 > Not case sensitive
 
 ### Parentheses:
@@ -43,8 +43,8 @@ Cat OR NOT Dog
 Output Truth Table
 
 ```
-Cat   Dog   | Cat OR NOT Dog 
-============================
+Cat   Dog   | Cat ∨ ¬Dog 
+========================
 False False | True
 False True  | False
 True  False | True
@@ -60,8 +60,8 @@ Input Expression
 
 Output Truth Table
 ```
-w     x     y     z     | (w OR x) AND (y OR z) 
-===============================================
+w     x     y     z     | (w ∨ x) ∧ (y ∨ z) 
+===========================================
 False False False False | False
 False False False True  | False
 False False True  False | False

@@ -12,11 +12,18 @@ expression = ""
 expressionArray = []
 
 operators = {
-    "NOT": 2,
-    "AND": 1,
-    "OR": 0
+    "NOT": 2, "¬": 2, "~": 2,
+
+    "AND": 1, "∧": 1, "^": 1, "/\\": 1,
+
+    "OR": 0, "∨": 0, "\\/": 0
 }
 
+finalOperatorSymbols = {
+    2: "¬",
+    1: "∧",
+    0: "∨"
+}
 vars = []
 expIndex = 0 
 varDict = {} 
@@ -42,15 +49,15 @@ def is_valid():
             if parenthesesBalance < 0 :
                 print("INVALID EXPRESSION - Too many close parentheses")
                 return False
-        elif element in operators and element != "NOT":
+        elif element in operators and operators[element] != 2:
 
-            if previousElement == "NOT":
+            if previousElement in operators and operators[previousElement] == 2:
                 print('INVALID EXPRESSION - Invalid operator/variable order: "' + previousElement, element + '"')
                 return False
             else:
                 operatorBalance -= 1
                 
-        elif element != "NOT":
+        elif not element in operators: # if element is a variable
             operatorBalance += 1
         
         if operatorBalance < 0 or operatorBalance > 1:
@@ -91,7 +98,7 @@ def build_expression_tree():
         if element in operators:
             newNode = Node(element)
             newNode.left = nodeStack.pop()
-            if element != "NOT":
+            if operators[element] != 2:
                 newNode.right = nodeStack.pop()
             nodeStack.append(newNode)
         else:
@@ -99,14 +106,14 @@ def build_expression_tree():
     expressionTree = nodeStack.pop()
 
 def expression_value(currentNode):
-    if currentNode.data == "OR":
-        return expression_value(currentNode.left) or expression_value(currentNode.right)
-    elif currentNode.data == "AND":
-        return expression_value(currentNode.left) and expression_value(currentNode.right)
-    elif currentNode.data == "NOT":
-        return not expression_value(currentNode.left)
-    else:
+    if not currentNode.data in operators:
         return varDict[currentNode.data]
+    elif operators[currentNode.data] == 0: # OR
+        return expression_value(currentNode.left) or expression_value(currentNode.right)
+    elif operators[currentNode.data] == 1: # AND
+        return expression_value(currentNode.left) and expression_value(currentNode.right)
+    elif operators[currentNode.data] == 2: # NOT
+        return not expression_value(currentNode.left)
 
 def print_line_number(i):
     global expIndex
@@ -156,16 +163,26 @@ while True:
     expression = input("> ")
     if expression.lower() == "quit": break
 
+    for key in operators.keys():
+        # print(key)
+        if key != "NOT" and key != "AND" and key != "OR":
+            expression = expression.replace(key, " " + key + " ")
+    
     expressionArray = expression.replace("(", " ( ").replace(")", " ) ").split()
-
+    # print(expressionArray)
     expression = ""
+
     for i in range(len(expressionArray)):
         if expressionArray[i].upper() in operators:
-            expressionArray[i] = expressionArray[i].upper()
-        if expressionArray[i] == "(" or (i < len(expressionArray) - 1 and expressionArray[i+1] == ")"):
+            expressionArray[i] = finalOperatorSymbols[operators[expressionArray[i].upper()]]
+        if(expressionArray[i] == finalOperatorSymbols[operators["NOT"]] or expressionArray[i] == "(" or (i < len(expressionArray) - 1 and expressionArray[i+1] == ")")):
             expression += expressionArray[i]
         else:
             expression += expressionArray[i] + " "
+        # if expressionArray[i] == "(" or (i < len(expressionArray) - 1 and expressionArray[i+1] == ")"):
+        #     expression += expressionArray[i]
+        # else:
+        #     expression += expressionArray[i] + " "
 
     vars = []
     postfixExpression = []
