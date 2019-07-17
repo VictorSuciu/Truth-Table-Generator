@@ -18,10 +18,10 @@ This console program generates truth tables from boolean expressions.
 ### Operators, in order of highest to lowest precedence:
 | Operator Type | Supported Notations |
 |:-------------:|:-------------------:|
-|    Negation   |     `NOT` `~`  `¬`  `!`    |
-|  Conjunction  |  `AND`  `/\`  `^`  `∧`  `&&`  |
-|  Disjunction  |    `OR`  `\/`  `∨`  `||`    |
-|   Inference   |      `->`  `=>`  `→`      |
+|    Negation   |`NOT` `~` `¬` `!`|
+|  Conjunction  |`AND` `/\` `^` `∧` `&&`|
+|  Disjunction  |`OR` `\/` `∨` `||`|
+|   Inference   |`->` `=>`  `→`|
 > Not case sensitive
 
 ### Parentheses:
