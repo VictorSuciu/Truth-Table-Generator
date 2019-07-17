@@ -4,7 +4,7 @@ This console program generates truth tables from boolean expressions.
 
 -----
 
-## Usage Instructions
+## Installation
 
 1. Download the file `Truth_Table_Generator.py`.
 2. Navigate into its parent directory in the command line. 
