@@ -16,9 +16,9 @@ This console program generates truth tables from boolean expressions.
 ## Expression Syntax 
 
 ### Operators, in order of precedence:
-* **Negation:** NOT, ~, ¬
-* **Conjunction:** AND, /\, ^, ∧
-* **Disjunction:** OR, \/, ∨
+* Negation: `NOT, ~, ¬`
+* Conjunction: `AND, /\\, ^, ∧`
+* Disjunction: `OR, \\/, ∨`
 > Not case sensitive
 
 ### Parentheses:
