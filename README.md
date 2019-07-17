@@ -6,10 +6,11 @@ This console program generates truth tables from boolean expressions.
 
 ## Installation
 
-1. Download the file `Truth_Table_Generator.py`.
-2. Navigate into its parent directory in the command line. 
-3. Enter the following command: `python3 Truth_Table_Generator.py`.
-4. Done! You can now enter boolean expressions and generate truth tables.
+1. Install (Python 3.x)[https://www.python.org/downloads/]
+2. Download the file `Truth_Table_Generator.py`.
+3. Navigate into its parent directory in the command line. 
+4. Enter the following command: `python3 Truth_Table_Generator.py`.
+5. Done! You can now enter boolean expressions and generate truth tables.
 
 -----
 
