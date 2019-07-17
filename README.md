@@ -6,7 +6,7 @@ This console program generates truth tables from boolean expressions.
 
 ## Installation
 
-1. Install (Python 3.x)[https://www.python.org/downloads/]
+1. Install [Python 3.x](https://www.python.org/downloads/)
 2. Download the file `Truth_Table_Generator.py`.
 3. Navigate into its parent directory in the command line. 
 4. Enter the following command: `python3 Truth_Table_Generator.py`.
