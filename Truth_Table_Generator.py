@@ -12,17 +12,20 @@ expression = ""
 expressionArray = []
 
 operators = {
-    "NOT": 2, "¬": 2, "~": 2,
+    "NOT": 2, "¬": 2, "~": 2, "!": 2,
 
-    "AND": 1, "∧": 1, "^": 1, "/\\": 1,
+    "AND": 1, "∧": 1, "^": 1, "/\\": 1, "&&": 1,
 
-    "OR": 0, "∨": 0, "\\/": 0
+    "OR": 0, "∨": 0, "\\/": 0, "||": 0,
+
+    "->": -1, "=>": -1, "→": -1
 }
 
 finalOperatorSymbols = {
     2: "¬",
     1: "∧",
-    0: "∨"
+    0: "∨",
+    -1: "→"
 }
 vars = []
 expIndex = 0 
@@ -108,6 +111,8 @@ def build_expression_tree():
 def expression_value(currentNode):
     if not currentNode.data in operators:
         return varDict[currentNode.data]
+    elif operators[currentNode.data] == -1: # Implication
+        return not (not expression_value(currentNode.left) and expression_value(currentNode.right))
     elif operators[currentNode.data] == 0: # OR
         return expression_value(currentNode.left) or expression_value(currentNode.right)
     elif operators[currentNode.data] == 1: # AND

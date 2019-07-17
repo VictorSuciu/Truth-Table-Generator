@@ -15,10 +15,13 @@ This console program generates truth tables from boolean expressions.
 
 ## Expression Syntax 
 
-### Operators, in order of precedence:
-* Negation: `NOT`, `~`, `¬`
-* Conjunction: `AND`, `/\`, `^`, `∧`
-* Disjunction: `OR`, `\/`, `∨`
+### Operators, in order of highest to lowest precedence:
+| Operator Type | Supported Notations |
+|:-------------:|:-------------------:|
+|    Negation   |     `NOT` `~`  `¬`  `!`    |
+|  Conjunction  |  `AND`  `/\`  `^`  `∧`  `&&`  |
+|  Disjunction  |    `OR`  `\/`  `∨`  `||`    |
+|   Inference   |      `->`  `=>`  `→`      |
 > Not case sensitive
 
 ### Parentheses:
@@ -28,7 +31,7 @@ This console program generates truth tables from boolean expressions.
 ### Variables
 Any other string is considered a variable
 
-#### Variables and Operators must be separated by a blank space. This is optional for parentheses.
+**Note:** Word operators (`NOT`, `AND`, `OR`) must be separated by a blank space. This is not required for any other operator notations.
 
 -----
 
@@ -78,4 +81,25 @@ True  True  False False | False
 True  True  False True  | True
 True  True  True  False | True
 True  True  True  True  | True
+```
+
+<br>
+
+Input Expression
+```
+(p || q) -> (p && !(r -> q))
+```
+
+Output Truth Table
+```
+p     q     r     | (p ∨ q) → (p ∧ ¬(r → q)) 
+============================================
+False False False | True
+False False True  | True
+False True  False | False
+False True  True  | False
+True  False False | False
+True  False True  | True
+True  True  False | False
+True  True  True  | False
 ```
