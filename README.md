@@ -22,8 +22,7 @@ This console program generates truth tables from boolean expressions.
 |  Conjunction  |`AND` `/\` `^` `∧` `&&`|
 |  Disjunction  |`OR` `\/` `∨` `\|\|`|
 |   Inference   |`->` `=>`  `→`|
-> Not case sensitive
-> Word operators (NOT, AND, OR) must be separated by a blank space. This is not required for any other operator notations.
+> NOTE: Not case sensitive. Word operators (NOT, AND, OR) must be separated by a blank space. This is not required for any other operator notations.
 ### Parentheses:
 * (
 * )
