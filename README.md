@@ -17,8 +17,8 @@ This console program generates truth tables from boolean expressions.
 
 ### Operators, in order of precedence:
 * Negation: `NOT, ~, ¬`
-* Conjunction: `AND, /\\, ^, ∧`
-* Disjunction: `OR, \\/, ∨`
+* Conjunction: `AND, /\, ^, ∧`
+* Disjunction: `OR, \/, ∨`
 > Not case sensitive
 
 ### Parentheses:
