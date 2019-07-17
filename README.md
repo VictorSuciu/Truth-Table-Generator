@@ -23,15 +23,13 @@ This console program generates truth tables from boolean expressions.
 |  Disjunction  |`OR` `\/` `∨` `\|\|`|
 |   Inference   |`->` `=>`  `→`|
 > Not case sensitive
-
+> Word operators (NOT, AND, OR) must be separated by a blank space. This is not required for any other operator notations.
 ### Parentheses:
 * (
 * )
 
 ### Variables
 Any other string is considered a variable
-
-**Note:** Word operators (`NOT`, `AND`, `OR`) must be separated by a blank space. This is not required for any other operator notations.
 
 -----
 
