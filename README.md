@@ -20,7 +20,7 @@ This console program generates truth tables from boolean expressions.
 |:-------------:|:-------------------:|
 |    Negation   |`NOT` `~` `¬` `!`|
 |  Conjunction  |`AND` `/\` `^` `∧` `&&`|
-|  Disjunction  |`OR` `\/` `∨` `||`|
+|  Disjunction  |`OR` `\/` `∨` `||` |
 |   Inference   |`->` `=>`  `→`|
 > Not case sensitive
 
